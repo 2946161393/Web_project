@@ -50,7 +50,6 @@ header {
     background-color: #007bff;
 }
 
-/* 下拉菜单重置和覆盖 Bootstrap 样式 */
 .navbar .dropdown {
     position: relative;
 }

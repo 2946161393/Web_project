@@ -121,7 +121,7 @@ header {
 .hero {
     position: relative;
     text-align: center;
-    color: white;
+    color: #dfdab9; 
 }
 
 .hero-image {
@@ -136,9 +136,13 @@ header {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: 100%; 
+    padding: 0 20px; 
+    margin-top: 30px;
 }
 
 .hero-content h1 {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     font-size: 2.5rem;
     margin-bottom: 10px;
 }
@@ -279,6 +283,12 @@ footer {
     font-size: 1.5rem;
     cursor: pointer;
     padding: 5px;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px; 
 }
 
 /* revised media inquiry */
