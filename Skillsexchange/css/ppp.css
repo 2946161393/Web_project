@@ -1,0 +1,227 @@
+/* Base styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: #005083;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Navbar styles */
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar li {
+    position: relative; 
+    margin: 0 10px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    display: block;
+    border-radius: 5px;
+}
+
+.navbar a:hover {
+    background-color: #007bff;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #007bff;
+    border-radius: 5px;
+    padding: 10px 0;
+    list-style: none;
+    min-width: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li {
+    margin: 0;
+}
+
+.dropdown-menu a {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+}
+
+.dropdown > a::after {
+    content: ' ▼';
+    font-size: 0.8rem;
+}
+
+/* Login Button */
+.login-button {
+    background: #007bff;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Privacy Section Bootstrap Integration */
+.privacy-bs {
+    background-color: #f8f9fa;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.privacy-bs .card {
+    border: none;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.privacy-bs h1 {
+    color: #005083;
+}
+
+.privacy-bs h2 {
+    color: #005083;
+}
+
+.privacy-bs .list-group-item {
+    background-color: transparent;
+    border-color: #dee2e6;
+}
+
+/* Hamburger Menu */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 5px;
+}
+
+/* Footer */
+footer {
+    background: #005083;
+    color: white;
+    text-align: center;
+    padding: 10px 20px;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.social-icons img {
+    width: 20px;
+    margin: 0 5px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.social-icons img:hover {
+    transform: scale(1.1);
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    header {
+        flex-wrap: wrap;
+        padding: 10px 15px;
+    }
+
+    .navbar {
+        display: none;
+        width: 100%;
+        order: 3;
+    }
+
+    .navbar.active {
+        display: block;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navbar li {
+        width: 100%;
+        margin: 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .navbar a {
+        padding: 12px 15px;
+        width: 100%;
+    }
+
+    .dropdown-menu {
+        position: static;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.1);
+        box-shadow: none;
+        padding: 0;
+    }
+
+    .dropdown-menu a {
+        padding-left: 30px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .privacy-bs .card-body {
+        padding: 1rem;
+    }
+    
+    .privacy-bs h1 {
+        font-size: 1.8rem;
+    }
+    
+    .privacy-bs h2 {
+        font-size: 1.4rem;
+    }
+}

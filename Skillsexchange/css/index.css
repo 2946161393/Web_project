@@ -282,7 +282,7 @@ footer {
 }
 
 /* revised media inquiry */
-@media screen and (max-width: 768px) { 
+@media screen and (max-width: 768px) {  /* 改为更合适的断点 */
     .menu-toggle {
         display: block;
     }
