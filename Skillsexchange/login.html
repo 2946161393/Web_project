@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GWU Skill Exchange</title>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+   <!-- Header -->
+    <header>
+    <div class="logo">GW Skill Exchange</div>
+    <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown">
+                <a href="#about" class="dropdown-toggle">About</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#mission">Mission & Vision</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#faqs">FAQs</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+    <a href="#features" class="dropdown-toggle">Features</a>
+    <ul class="dropdown-menu">
+        <li><a href="#skill-profiles">Skill Profiles</a></li>
+        <li><a href="#workshops">Workshops & Events</a></li>
+        <li><a href="#collaborative-projects">Collaborative Projects</a></li>
+    </ul>
+</li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html" class="login-button">Login</a></li>
+        </ul>
+        <script src="script.js" defer></script>
+
+    </nav>
+</header>
+
+<div class="login-section">
+    <div class="login-box">
+        <h1 class="login-title">Login</h1>
+        <form>
+            <div class="login-form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="login-form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+
+        <div class="login-options">
+            <div class="remember-me">
+                <input type="checkbox" id="remember" name="remember">
+                <label for="remember">Remember me</label>
+            </div>
+            <a href="#forgot-password" class="forgot-password">Forgot password?</a>
+        </div>
+            
+            <button type="submit" class="login-submit-btn">Login</button>
+        </form>
+
+        <div class="signup-text">
+            Don't have an account? <a href="#signup">Sign up here</a>
+        </div>
+    </div>
+</div>
+
+
+        <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 GWU Skill Exchange. All Rights Reserved.</p>
+        <div class="footer-links">
+            <a href="#about">About</a> | 
+            <a href="#contact">Contact Us</a> | 
+            <a href="#privacy">Privacy Policy</a> | 
+            <a href="terms.html">Terms of Use</a>
+        </div>
+            <div class="social-icons">
+                <a href="#"><img src="icons/instagram.png" alt="Instagram"></a>
+                <a href="#"><img src="icons/facebook.png" alt="Facebook"></a>
+                <a href="#"><img src="icons/linkedin.png" alt="LinkedIn"></a>
+            </div>
+    </footer>
+</body>
+</html>

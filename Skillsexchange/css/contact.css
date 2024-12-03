@@ -121,6 +121,7 @@ header {
 .terms-section {
     padding: 30px 20px 80px;
     background: #fff;
+    background-image: url('../images/job.jpg');
 }
 
 .container {
@@ -210,6 +211,7 @@ header {
     margin-bottom: 15px;
 }
 
+
 /* Footer */
 footer {
     background: #005083;
@@ -244,6 +246,73 @@ footer {
     transform: scale(1.1);
 }
 
+/*for hamburger*/
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 5px;
+}
+
+/* revised media inquiry */
+@media screen and (max-width: 768px) {  
+    .menu-toggle {
+        display: block;
+    }
+
+    header {
+        flex-wrap: wrap;
+        padding: 10px 15px;
+    }
+
+    .navbar {
+        display: none; /* default menu */
+        width: 100%;
+        order: 3; /* make sure the logo under the hamburge */
+    }
+
+    .navbar.active {
+        display: block;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navbar li {
+        width: 100%;
+        margin: 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .navbar a {
+        padding: 12px 15px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .dropdown-menu {
+        position: static;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.1);
+        box-shadow: none;
+        padding: 0;
+    }
+
+    .dropdown-menu a {
+        padding-left: 30px;
+    }
+
+    .login-button {
+        margin: 10px 15px;
+        text-align: center;
+    }
+}
+
 /* Media query for mobile screens */
 @media screen and (max-width: 480px) {
     header {
@@ -267,8 +336,8 @@ footer {
 
     .navbar li {
         width: 100%;
-        margin: 5px 0;
-        text-align: center;
+        margin: 0 5px;
+        position: relative; 
     }
 
     .navbar a {
