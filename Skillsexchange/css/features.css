@@ -96,7 +96,6 @@ header {
     background-color: #0056b3;
 }
 
-/* 下拉箭头 */
 .dropdown > a::after {
     content: ' ▼';
     font-size: 0.8rem;
@@ -111,17 +110,6 @@ header {
     min-height: calc(100vh - 140px);
     padding: 40px 0;
     position: relative;
-}
-
-.features-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(255, 255, 255, 0.8);
-    z-index: 1;
 }
 
 .features-section .container {
