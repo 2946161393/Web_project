@@ -185,10 +185,6 @@ header {
 
 /* Testimonials Section */
 .testimonials {
-    height: auto;
-    overflow-y: scroll;
-    padding-bottom: 150px;
-    min-height: 100vh;
     padding: 50px 20px;
     background: #f4f4f4;
     text-align: center;
@@ -196,11 +192,12 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
+    z-index: 1;
 }
 
 .testimonials::before {
     content: '';
-    position: absolute;
     top: 0;
     left: 0;
     right: 0;
@@ -543,20 +540,12 @@ footer {
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.2s, transform 0.2s;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    pointer-events: none;
-    z-index: 1;
- }
- 
- [data-section="true"].active {
+}
+
+[data-section="true"].active {
     opacity: 1;
     transform: translateY(0);
-    pointer-events: all;
-    z-index: 2;
- }
+}
  
  #home {
     z-index: 0;
