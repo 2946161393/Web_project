@@ -38,6 +38,14 @@ document.querySelectorAll('.dropdown > a').forEach((dropdownToggle) => {
     });
 });
 
+window.addEventListener('click', () => {
+    const sections = document.querySelectorAll('[data-section="true"]');
+    sections.forEach(section => {
+        if (section.classList.contains('active')) {
+            section.style.transition = 'none';
+        }
+    });
+});
 // outer
 document.addEventListener('click', function(e) {
     if (!e.target.closest('.dropdown')) {
@@ -53,11 +61,18 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         if (!this.parentElement.classList.contains('dropdown')) {  
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
+            const sections = document.querySelectorAll('[data-section="true"]');
             if (target) {
-                window.scrollTo({
-                    top: target.offsetTop,
-                    behavior: 'smooth',
+                sections.forEach(section => {
+                    section.classList.remove('active');
+                    section.style.transition = 'none';
                 });
+                target.classList.add('active');
+                setTimeout(() => {
+                    sections.forEach(section => {
+                        section.style.transition = '';
+                    });
+                }, 50);
             }
         }
     });
@@ -117,3 +132,4 @@ document.addEventListener('DOMContentLoaded', () => {
     
     window.addEventListener('scroll', updateSections);
  });
+
