@@ -185,6 +185,10 @@ header {
 
 /* Testimonials Section */
 .testimonials {
+    height: auto;
+    overflow-y: scroll;
+    padding-bottom: 150px;
+    min-height: 100vh;
     padding: 50px 20px;
     background: #f4f4f4;
     text-align: center;
@@ -216,6 +220,8 @@ header {
     justify-content: space-around;
     flex-wrap: wrap;
     gap: 20px;
+    max-height: calc(100vh - 200px);
+    overflow-y: auto;
 }
 
 .testimonial {
