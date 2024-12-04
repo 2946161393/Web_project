@@ -1,4 +1,4 @@
-// 添加汉堡菜单功能
+// hamburger
 const menuToggle = document.querySelector('.menu-toggle');
 const navbar = document.querySelector('.navbar');
 
@@ -12,7 +12,7 @@ if (menuToggle) {
     });
 }
 
-// 点击文档其他地方关闭菜单
+// click to close the menu
 document.addEventListener('click', function(e) {
     if (!e.target.closest('.navbar') && !e.target.closest('.menu-toggle')) {
         navbar.classList.remove('active');
@@ -22,7 +22,7 @@ document.addEventListener('click', function(e) {
     }
 });
 
-// 你现有的下拉菜单代码
+// dropdown
 document.querySelectorAll('.dropdown > a').forEach((dropdownToggle) => {
     dropdownToggle.addEventListener('click', (e) => {
         e.preventDefault();
@@ -38,7 +38,7 @@ document.querySelectorAll('.dropdown > a').forEach((dropdownToggle) => {
     });
 });
 
-// 点击外部关闭下拉菜单
+// outer
 document.addEventListener('click', function(e) {
     if (!e.target.closest('.dropdown')) {
         document.querySelectorAll('.dropdown').forEach(dropdown => {
@@ -47,7 +47,7 @@ document.addEventListener('click', function(e) {
     }
 });
 
-// 你现有的平滑滚动代码
+// scroll
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener('click', function (e) {
         if (!this.parentElement.classList.contains('dropdown')) {  
@@ -63,7 +63,7 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     });
 });
 
-// 你现有的导航高亮代码
+// highlight
 window.addEventListener('scroll', () => {
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('.navbar a');
@@ -86,12 +86,34 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// 添加窗口大小改变事件处理
 window.addEventListener('resize', function() {
-    if (window.innerWidth > 768) { // 根据你的媒体查询断点调整
+    if (window.innerWidth > 768) { 
         navbar.classList.remove('active');
         if (menuToggle) {
             menuToggle.setAttribute('aria-expanded', 'false');
         }
     }
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const sections = document.querySelectorAll('[data-section="true"]');
+    let currentSection = 0;
+ 
+    function updateSections() {
+        const scrollPosition = window.scrollY;
+        const windowHeight = window.innerHeight;
+        const newSection = Math.floor(scrollPosition / windowHeight);
+        
+        if (newSection !== currentSection && newSection < sections.length) {
+            sections.forEach(section => section.classList.remove('active'));
+            sections[newSection].classList.add('active');
+            currentSection = newSection;
+        }
+    }
+ 
+    // initalize first section as active
+    sections[0].classList.add('active');
+    
+    
+    window.addEventListener('scroll', updateSections);
+ });
