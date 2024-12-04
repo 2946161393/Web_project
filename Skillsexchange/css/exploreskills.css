@@ -128,6 +128,7 @@ header {
     background-repeat: no-repeat;
     position: relative;
     min-height: 100vh; 
+    margin: 0;
 }
 
 #skills h2 {
