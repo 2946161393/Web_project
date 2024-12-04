@@ -1,9 +1,18 @@
 /* Base styles */
 body {
     margin: 0;
+    padding: 0;
     font-family: Arial, sans-serif;
     line-height: 1.6;
     color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* Main content to push footer down */ 
+.main-content { flex: 1;
 }
 
 /* Header */
@@ -95,7 +104,7 @@ header {
     background-color: #0056b3;
 }
 
-/* drop down arrow */
+/* dropdown arrow*/
 .navbar .dropdown > a::after {
     content: ' ▼';
     font-size: 0.8rem;
@@ -111,66 +120,47 @@ header {
     cursor: pointer;
 }
 
-/* Sign Up Section Styles */
-.signup-section {
-    background-image: url('../images/login.jpg');
+/* Explore Skills Section */
+#skills {
+    background-image: url('../images/skills.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    min-height: calc(100vh - 140px);
-    padding: 40px 0;
     position: relative;
+    min-height: 100vh; 
 }
 
-.signup-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(255, 255, 255, 0.8);
-    z-index: 1;
-}
-
-.signup-section .container {
-    position: relative;
-    z-index: 2;
-}
-
-.signup-section h1 {
+#skills h2 {
     color: #005083;
 }
 
-.signup-section .card {
-    border: none;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+#skills p.lead {
+    color: #555;
 }
 
-.signup-section .form-label {
-    color: #005083;
-    font-weight: 500;
-}
-
-.signup-section .btn-primary {
+/* Search Bar */
+.input-group .btn-primary {
     background-color: #007bff;
     border-color: #007bff;
-    padding: 10px 20px;
-    font-weight: 500;
 }
 
-.signup-section .btn-primary:hover {
+.input-group .btn-primary:hover {
     background-color: #0056b3;
     border-color: #0056b3;
 }
 
-.signup-section a {
-    color: #007bff;
-    text-decoration: none;
+/* Skill Categories */
+.card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: none;
 }
 
-.signup-section a:hover {
-    text-decoration: underline;
+.card-title {
+    color: #007bff;
+}
+
+.card-body ul li {
+    color: #555;
 }
 
 /* Hamburger Menu */
