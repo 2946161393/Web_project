@@ -194,10 +194,22 @@ header {
     align-items: center;
 }
 
-.testimonials h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
+.testimonials::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(244, 244, 244, 0.5);
+    z-index: -1;
 }
+
+.testimonials h2 {
+    font-size: 3rem;
+    margin-bottom: 30px;
+    color: black;
+ }
 
 .testimonial-grid {
     display: flex;
@@ -417,19 +429,40 @@ footer {
 
 /* Features Section */
 .features {
+    background: url('images/feature.jpg') no-repeat center center;
+    background-size: cover;
+    position: relative;
+    z-index: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 50px 20px;
-    background: #f4f4f4;
     text-align: center;
+}
+
+.features h2 {
+    font-size: 3rem;  
+    margin-bottom: 30px;
+    color: black;  
+}
+
+.features::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(244, 244, 244, 0.5);
+    z-index: -1;
 }
 
 .feature-blocks {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    z-index: 2;
 }
 
 
