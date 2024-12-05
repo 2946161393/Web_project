@@ -6,6 +6,16 @@ body {
     color: #333;
 }
 
+.log-image {
+    width: 150px;
+    height: auto;
+    position: relative;
+    height: auto;
+    margin: 0;
+    top: 15px;
+    bottom: 0;
+  }
+
 /* Header */
 header {
     display: flex;
@@ -22,6 +32,8 @@ header {
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
+    position: relative;
+    top: -15px; 
 }
 
 /* Navbar styles */

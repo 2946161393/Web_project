@@ -22,7 +22,19 @@ header {
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
+    position: relative;
+    top: -15px; 
 }
+
+.log-image {
+    width: 150px;
+    height: auto;
+    position: relative;
+    height: auto;
+    margin: 0;
+    top: 20px;
+    bottom: 0;
+  }
 
 .navbar .dropdown .dropdown-menu {
     display: none !important; 
@@ -153,6 +165,7 @@ header {
 
 .hero-content p {
     margin-bottom: 20px;
+    color:white;
 }
 
 .hero-buttons .primary-button,
@@ -447,7 +460,23 @@ footer {
 .features h2 {
     font-size: 3rem;  
     margin-bottom: 30px;
-    color: black;  
+    color:  #294e7f;  
+}
+
+.features h3 {
+    font-size: 2rem; 
+    font-weight: bold; 
+    color: #294e7f; 
+    text-align: center;
+    margin-bottom: 10px; 
+}
+
+.features p {
+    font-size: 1.2rem; 
+    color: #333; 
+    text-align: center; 
+    margin-bottom: 20px; 
+    line-height: 1.5; 
 }
 
 .features::before {
@@ -466,6 +495,7 @@ footer {
     justify-content: space-around;
     flex-wrap: wrap;
     z-index: 2;
+    gap: 100px;
 }
 
 
@@ -478,14 +508,15 @@ footer {
 
 
 .feature {
+    padding: 0; 
     text-align: center;
     margin: 20px;
     transition: transform 0.3s ease, opacity 0.3s ease; 
     opacity: 0; 
     transform: translateY(20px); 
     width: 200px;
+    overflow: hidden; 
 }
-
 
 .feature img {
     width: 150px;
@@ -519,7 +550,16 @@ footer {
 
 .feature {
     animation: fadeIn 1s ease forwards;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 300px;
+    margin: 10px;
 }
+
 
 
 .feature:nth-child(1) {

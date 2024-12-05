@@ -24,6 +24,16 @@ header {
     font-weight: bold;
 }
 
+.log-image {
+    width: 150px;
+    height: auto;
+    position: relative;
+    height: auto;
+    margin: 0;
+    top: 20px;
+    bottom: 0;
+  }
+
 /* Navbar styles */
 .navbar ul {
     list-style: none;
@@ -120,6 +130,9 @@ header {
     min-height: calc(100vh - 140px);
     padding: 40px 0;
     position: relative;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .signup-section::before {

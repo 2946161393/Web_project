@@ -21,7 +21,19 @@ header {
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
+    position: relative;
+    top: -15px; 
 }
+
+.log-image {
+    width: 150px;
+    height: auto;
+    position: relative;
+    height: auto;
+    margin: 0;
+    top: 20px;
+    bottom: 0;
+  }
 
 .navbar .dropdown .dropdown-menu {
     display: none !important; 

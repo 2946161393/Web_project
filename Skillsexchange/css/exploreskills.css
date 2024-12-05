@@ -10,11 +10,23 @@ body {
     flex-direction: column;
 }
 
-
+.log-image {
+    width: 150px;
+    height: auto;
+    position: relative;
+    height: auto;
+    margin: 0;
+    top: 15px;
+    bottom: 0;
+  }
 /* Main content to push footer down */ 
-.main-content { flex: 1;
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0; 
+    background-color: #005083; 
 }
-
 /* Header */
 header {
     display: flex;
@@ -31,6 +43,8 @@ header {
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
+    position: relative;
+    top: -15px; 
 }
 
 /* Navbar styles */
@@ -53,6 +67,7 @@ header {
     padding: 10px 15px;
     display: block;
     border-radius: 5px;
+    font-size: 1.4rem; 
 }
 
 .navbar a:hover {
@@ -127,16 +142,17 @@ header {
     background-position: center;
     background-repeat: no-repeat;
     position: relative;
-    min-height: 100vh; 
-    margin: 0;
+    padding: 40px 0;
+    flex: 1;
+    background-color: #005083;
 }
 
 #skills h2 {
-    color: #005083;
-}
-
-#skills p.lead {
-    color: #555;
+    text-align: center;
+    color: #1e1112; 
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3); 
+    font-size: 2.5rem;
+    font-weight: bold;
 }
 
 /* Search Bar */

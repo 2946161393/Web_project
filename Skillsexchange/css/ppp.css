@@ -19,11 +19,22 @@ header {
     z-index: 1000;
 }
 
+.log-image {
+    width: 150px;
+    height: auto;
+    position: relative;
+    height: auto;
+    margin: 0;
+    top: 20px;
+    bottom: 0;
+  }
+
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
+    position: relative;
+    top: -15px; 
 }
-
 /* Navbar styles */
 .navbar ul {
     list-style: none;
