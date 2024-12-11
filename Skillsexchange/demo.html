@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const timeDisplay = document.getElementById('timeDisplay');
     const progressBar = document.querySelector('.progress-bar');
 
-    // 播放/暂停控制
+//pause and play
     playButton.addEventListener('click', function() {
         if (video.paused) {
             video.play();
@@ -135,7 +135,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // 音量控制
+//volume control
     volumeButton.addEventListener('click', function() {
         if (video.muted) {
             video.muted = false;
@@ -146,7 +146,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // 更新时间显示和进度条
     video.addEventListener('timeupdate', function() {
         const current = video.currentTime;
         const duration = video.duration;
