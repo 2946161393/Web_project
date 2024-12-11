@@ -45,13 +45,13 @@
         <div class="main-content">
         <section id="skills">
            <div class="container">
-               <div class="input-group mb-4">
-                   <input type="text" class="form-control" placeholder="Search for a skill..." id="skillSearch">
-                   <button class="btn btn-primary">Search</button>
-               </div>
+                <div class="input-group mb-4">
+                    <input type="text" class="form-control" placeholder="Search for a skill..." id="skillSearch" oninput="searchSkills()">
+                    <button class="btn btn-primary" onclick="searchSkills()">Search</button>
+                </div>
                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
                    <div class="col">
-                       <a href="inter.html" class="text-decoration-none text-dark">
+                        <a href="inter.html" class="text-decoration-none text-dark skill-card" data-keywords="python javascript web development programming coding computer science">
                            <div class="card h-100" style="transition: transform 0.2s;">
                                <div class="card-body">
                                    <h3 class="card-title">Programming</h3>
@@ -65,7 +65,7 @@
                        </a>
                    </div>
                    <div class="col">
-                       <a href="inter.html" class="text-decoration-none text-dark">
+                       <a href="inter.html"  class="text-decoration-none text-dark skill-card" data-keywords="ui ux graphic design illustration figma photoshop">
                            <div class="card h-100" style="transition: transform 0.2s;">
                                <div class="card-body">
                                    <h3 class="card-title">Design</h3>
@@ -79,7 +79,7 @@
                        </a>
                    </div>
                    <div class="col">
-                       <a href="inter.html" class="text-decoration-none text-dark">
+                       <a href="inter.html"  class="text-decoration-none text-dark skill-card" data-keywords="Leadership">
                            <div class="card h-100" style="transition: transform 0.2s;">
                                <div class="card-body">
                                    <h3 class="card-title">Soft Skills</h3>
@@ -93,7 +93,7 @@
                        </a>
                    </div>
                    <div class="col">
-                       <a href="inter.html" class="text-decoration-none text-dark">
+                       <a href="inter.html"  class="text-decoration-none text-dark skill-card" data-keywords="cloud data system os">
                            <div class="card h-100" style="transition: transform 0.2s;">
                                <div class="card-body">
                                    <h3 class="card-title">Technical Skills</h3>
@@ -107,7 +107,7 @@
                        </a>
                    </div>
                    <div class="col">
-                       <a href="inter.html" class="text-decoration-none text-dark">
+                       <a href="inter.html"  class="text-decoration-none text-dark skill-card" data-keywords="languages Spanish Mandarin ">
                            <div class="card h-100" style="transition: transform 0.2s;">
                                <div class="card-body">
                                    <h3 class="card-title">Languages</h3>
@@ -121,7 +121,7 @@
                        </a>
                    </div>
                    <div class="col">
-                       <a href="inter.html" class="text-decoration-none text-dark">
+                       <a href="inter.html"  class="text-decoration-none text-dark skill-card" data-keywords="Analysis Writing labs">
                            <div class="card h-100" style="transition: transform 0.2s;">
                                <div class="card-body">
                                    <h3 class="card-title">Research Skills</h3>
@@ -135,7 +135,7 @@
                        </a>
                    </div>
                    <div class="col">
-                       <a href="inter.html" class="text-decoration-none text-dark">
+                       <a href="inter.html"  class="text-decoration-none text-dark skill-card" data-keywords="Management Financial Business">
                            <div class="card h-100" style="transition: transform 0.2s;">
                                <div class="card-body">
                                    <h3 class="card-title">Business Skills</h3>
@@ -149,7 +149,7 @@
                        </a>
                    </div>
                    <div class="col">
-                       <a href="inter.html" class="text-decoration-none text-dark">
+                       <a href="inter.html"  class="text-decoration-none text-dark skill-card" data-keywords="video content Creation">
                            <div class="card h-100" style="transition: transform 0.2s;">
                                <div class="card-body">
                                    <h3 class="card-title">Creative Skills</h3>
@@ -163,7 +163,7 @@
                        </a>
                    </div>
                    <div class="col">
-                       <a href="inter.html" class="text-decoration-none text-dark">
+                       <a href="inter.html"  class="text-decoration-none text-dark skill-card" data-keywords="seo Media Marketing">
                            <div class="card h-100" style="transition: transform 0.2s;">
                                <div class="card-body">
                                    <h3 class="card-title">Marketing</h3>
@@ -195,6 +195,39 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+<script>
+function searchSkills() {
+    // input by search
+    const searchInput = document.getElementById('skillSearch').value.toLowerCase();
+    
+    // obtain all skills
+    const skillCards = document.querySelectorAll('.skill-card');
+    
+    skillCards.forEach(card => {
+        // get all info of card
+        const keywords = card.getAttribute('data-keywords') || '';
+        const title = card.querySelector('.card-title').textContent;
+        const skills = Array.from(card.querySelectorAll('li'))
+            .map(li => li.textContent)
+            .join(' ');
+            
+        const searchText = (keywords + ' ' + title + ' ' + skills).toLowerCase();
+        
+        // hide or show cards
+        if (searchText.includes(searchInput)) {
+            card.closest('.col').style.display = ''; 
+        } else {
+            card.closest('.col').style.display = 'none'; 
+        }
+    });
+}
+
+// enter to search
+document.getElementById('skillSearch').addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+        searchSkills();
+    }
+});
+</script>
 </body>
 </html>
