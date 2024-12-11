@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programming Skills - GW Skill Exchange</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .header {
+            background-color: #005083;
+            color: white;
+            padding: 40px 0;
+        }
+        
+        .card {
+            transition: transform 0.2s;
+            height: 100%;
+            border: none;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .action-card {
+            text-align: center;
+            padding: 40px 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .action-icon {
+            font-size: 48px;
+            color: #005083;
+            margin-bottom: 20px;
+        }
+
+        .community-card {
+            border-left: 4px solid #005083;
+            margin-bottom: 15px;
+            background: white;
+        }
+
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #005083;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .skill-tag {
+            background: #e9ecef;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            margin-right: 5px;
+        }
+
+        .action-card {
+            text-align: center;
+            padding: 40px 20px;
+            background: url('images/your-image.jpg');  
+            background-size: cover;
+            background-position: center;
+            border-radius: 8px;
+            position: relative;
+        }
+
+
+        .action-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 8px;
+        }
+
+        .action-card > * {
+            position: relative;
+            z-index: 1;
+            color: white;  /* 文字改为白色 */
+        }
+
+.action-card .text-muted {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+    </style>
+</head>
+<body>
+<!-- Header -->
+<div class="header">
+    <div class="container">
+        <!-- Add Back Button -->
+        <a href="exploreskills.html" class="btn btn-light mb-3">
+            <i class="fas fa-arrow-left"></i> Back
+        </a>
+        <h1 class="display-5">Programming Skills</h1>
+        <p class="lead">Learn, share, and grow with the GW community</p>
+    </div>
+</div>
+
+<!-- Main Content -->
+<div class="container my-5">
+    <div class="row g-4">
+        <!-- Left Column: Action Cards -->
+        <div class="col-md-8">
+            <div class="row g-4">
+                <!-- Watch Tutorials -->
+                <div class="col-md-6">
+                    <a href="demo.html" class="text-decoration-none">
+                        <div class="card action-card" style="background-image: url('images/learn.png'); background-size: cover; background-position: center;">
+                            <div class="action-icon">
+                                <i class="fas fa-play-circle"></i>
+                            </div>
+                            <h3 class="h4">Watch Tutorials</h3>
+                            <p class="text-muted">Access curated programming tutorials from GW community</p>
+                            <button class="btn btn-primary">Start Learning</button>
+                        </div>
+                    </a>
+                </div>
+
+                    <!-- Share Experience -->
+                    <div class="col-md-6">
+                        <a href="upload.html" class="text-decoration-none text-dark">
+                            <div class="card action-card" style="background-image: url('images/share.jpg'); background-size: cover; background-position: center;">
+                                <div class="action-icon">
+                                    <i class="fas fa-upload"></i>
+                                </div>
+                                <h3 class="h4">Share Experience</h3>
+                                <p class="text-muted">Share your programming knowledge with others</p>
+                                <button class="btn btn-outline-primary">Upload Content</button>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Featured Courses -->
+                <div class="mt-5">
+                    <h2 class="h3 mb-4">Featured Courses</h2>
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="card">
+                                <img src="images/python.jpg" class="card-img-top" alt="Python Course">
+                                <div class="card-body">
+                                    <h5 class="card-title">Python for Beginners</h5>
+                                    <p class="card-text">Learn Python basics with hands-on projects</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <small class="text-muted">4.5 ★ (120 ratings)</small>
+                                        <button class="btn btn-sm btn-primary">Start Learning</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card">
+                                <img src="images/java.jpg" class="card-img-top" alt="JavaScript Course">
+                                <div class="card-body">
+                                    <h5 class="card-title">JavaScript Fundamentals</h5>
+                                    <p class="card-text">Master JavaScript with real-world examples</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <small class="text-muted">4.7 ★ (85 ratings)</small>
+                                        <button class="btn btn-sm btn-primary">Start Learning</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Community Section -->
+            <div class="col-md-4">
+                <div class="card p-4">
+                    <h3 class="h4 mb-4">Community Shares</h3>
+                    
+                    <!-- Community Share Items -->
+                    <div class="community-card p-3">
+                        <div class="d-flex align-items-center mb-2">
+                            <div class="user-avatar me-2">JD</div>
+                            <div>
+                                <h6 class="mb-0">John Doe</h6>
+                                <small class="text-muted">Computer Science, 2024</small>
+                            </div>
+                        </div>
+                        <p class="mb-2">Shared my experience with Python data analysis</p>
+                        <div class="mb-2">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">Data Analysis</span>
+                        </div>
+                        <small class="text-muted">2 hours ago</small>
+                    </div>
+
+                    <div class="community-card p-3">
+                        <div class="d-flex align-items-center mb-2">
+                            <div class="user-avatar me-2">AS</div>
+                            <div>
+                                <h6 class="mb-0">Alice Smith</h6>
+                                <small class="text-muted">Engineering, 2025</small>
+                            </div>
+                        </div>
+                        <p class="mb-2">Posted a tutorial on web development basics</p>
+                        <div class="mb-2">
+                            <span class="skill-tag">HTML</span>
+                            <span class="skill-tag">CSS</span>
+                            <span class="skill-tag">JavaScript</span>
+                        </div>
+                        <small class="text-muted">1 day ago</small>
+                    </div>
+
+                    <div class="community-card p-3">
+                        <div class="d-flex align-items-center mb-2">
+                            <div class="user-avatar me-2">MJ</div>
+                            <div>
+                                <h6 class="mb-0">Mike Johnson</h6>
+                                <small class="text-muted">Business Analytics, 2023</small>
+                            </div>
+                        </div>
+                        <p class="mb-2">Shared tips for learning R programming</p>
+                        <div class="mb-2">
+                            <span class="skill-tag">R</span>
+                            <span class="skill-tag">Statistics</span>
+                        </div>
+                        <small class="text-muted">2 days ago</small>
+                    </div>
+
+                    <button class="btn btn-outline-primary mt-3">View All Shares</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Course - GW Skill Exchange</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .course-header {
+            background-color: #005083;
+            color: white;
+            padding: 40px 0;
+        }
+
+        .form-section {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .upload-box {
+            border: 2px dashed #ddd;
+            padding: 30px;
+            text-align: center;
+            background: white;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .upload-box:hover {
+            border-color: #005083;
+        }
+
+        .section-item {
+            background: white;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+        }
+
+        .btn-primary {
+            background-color: #005083;
+            border-color: #005083;
+        }
+
+        .btn-primary:hover {
+            background-color: #003d63;
+            border-color: #003d63;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="course-header">
+        <div class="container">
+                    <!-- Add Back Button -->
+        <a href="inter.html" class="btn btn-light mb-3">
+            <i class="fas fa-arrow-left"></i> Back
+        </a>
+            <h1 class="display-5 fw-bold mb-4">Share Your Skills</h1>
+            <p class="lead">Contribute to the GW community by sharing your knowledge and expertise</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container my-5">
+        <form id="courseUploadForm">
+            <!-- Basic Information -->
+            <div class="form-section">
+                <h2 class="h4 mb-4">Course Basic Information</h2>
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label class="form-label">Course Title</label>
+                        <input type="text" class="form-control" placeholder="e.g., Python Programming Basics">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Category</label>
+                        <select class="form-select">
+                            <option>Programming</option>
+                            <option>Design</option>
+                            <option>Business</option>
+                            <option>Language</option>
+                            <option>Research Skills</option>
+                        </select>
+                    </div>
+                    <div class="col-12">
+                        <label class="form-label">Course Description</label>
+                        <textarea class="form-control" rows="4" placeholder="Describe what students will learn..."></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video Upload -->
+            <div class="form-section">
+                <h2 class="h4 mb-4">Course Content</h2>
+                <div class="upload-box mb-4">
+                    <i class="fas fa-cloud-upload-alt fa-3x mb-3 text-muted"></i>
+                    <h3 class="h5">Upload Course Video</h3>
+                    <p class="text-muted">Drag and drop your video file here or click to browse</p>
+                    <input type="file" id="videoUpload" class="d-none" accept="video/*">
+                    <button type="button" class="btn btn-outline-primary" onclick="document.getElementById('videoUpload').click()">
+                        Choose File
+                    </button>
+                </div>
+
+                <!-- Course Sections -->
+                <h3 class="h5 mb-3">Course Outline</h3>
+                <div id="courseSections">
+                    <div class="section-item">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h4 class="h6 mb-0">Section 1</h4>
+                            <button type="button" class="btn btn-sm btn-outline-danger">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" class="form-control mb-2" placeholder="Section Title">
+                            <textarea class="form-control" rows="2" placeholder="Section Description"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-outline-primary my-3">
+                    <i class="fas fa-plus"></i> Add Section
+                </button>
+            </div>
+
+            <!-- Settings -->
+            <div class="form-section">
+                <h2 class="h4 mb-4">Course Settings</h2>
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label class="form-label">Difficulty Level</label>
+                        <select class="form-select">
+                            <option>Beginner</option>
+                            <option>Intermediate</option>
+                            <option>Advanced</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Estimated Duration</label>
+                        <input type="text" class="form-control" placeholder="e.g., 2 hours">
+                    </div>
+                    <div class="col-12">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="enableDiscussion">
+                            <label class="form-check-label" for="enableDiscussion">
+                                Enable discussion forum for this course
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary btn-lg px-5">
+                    Publish Course
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

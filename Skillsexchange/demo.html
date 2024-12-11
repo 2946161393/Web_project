@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Machine Learning Course</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/demo.css">
+</head>
+<body>
+    <!-- Course Header -->
+    <div class="course-header">
+        <div class="container">
+                    <!-- Add Back Button -->
+        <a href="inter.html" class="btn btn-light mb-3">
+            <i class="fas fa-arrow-left"></i> Back
+        </a>
+            <h1 class="display-5 fw-bold mb-4">Python Beginner</h1>
+            <div class="course-stats d-flex align-items-center flex-wrap">
+                <span class="me-3">
+                    <i class="fas fa-star text-warning"></i>
+                    4.5 (192,020 ratings)
+                </span>
+                <span class="me-3">1,102,263 students</span>
+                <span class="me-3">43 hours total</span>
+                <span>Last updated: December 2024</span>
+            </div>
+        </div>
+    </div>
+
+
+<!-- Video Section -->
+<div class="video-container">
+    <video id="myVideo" style="width: 100%;">
+        <source src="video/1.mp4" type="video/mp4">
+    </video>
+</div>
+        <!-- Video Controls -->
+        <div class="video-controls">
+            <div class="time-progress">
+                <div class="progress-bar bg-primary" role="progressbar" style="width: 0%"></div>
+            </div>
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center">
+                    <button class="control-button" id="playButton">
+                        <i class="fas fa-pause"></i>
+                    </button>
+                    <button class="control-button" id="volumeButton">
+                        <i class="fas fa-volume-up"></i>
+                    </button>
+                    <span class="ms-2" id="timeDisplay">0:00 / 0:00</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Course Content -->
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-lg-8">
+                <!-- Course Description -->
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h2 class="h4 mb-3">About this course</h2>
+                        <p>Learn to create Machine Learning Algorithms in Python and R from two Data Science experts. Code templates included.</p>
+                        <p>Master Machine Learning on Python & R. Have a great intuition of many Machine Learning models. Make accurate predictions. Make powerful analysis.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <!-- Course Content Sidebar -->
+                <div class="card course-sidebar">
+                    <div class="card-header">
+                        <h2 class="h5 mb-0">Course Content</h2>
+                    </div>
+                    <div class="accordion" id="courseContent">
+                        <!-- Section 1 -->
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="section-title" type="button" data-bs-toggle="collapse" data-bs-target="#section1">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <i class="fas fa-chevron-down rotate-icon me-2"></i>
+                                            Getting Started
+                                        </div>
+                                        <span class="duration">25min</span>
+                                    </div>
+                                </button>
+                            </h3>
+                            <div id="section1" class="accordion-collapse collapse show" data-bs-parent="#courseContent">
+                                <div class="accordion-body p-0">
+                                    <div class="lecture-item">
+                                        <i class="fas fa-play-circle progress-icon"></i>
+                                        <span class="flex-grow-1">Get Excited about ML: Predict Car Purchases</span>
+                                        <span class="duration">5min</span>
+                                    </div>
+                                    <div class="lecture-item">
+                                        <i class="fas fa-play-circle progress-icon"></i>
+                                        <span class="flex-grow-1">Get all the Datasets, Codes and Slides here</span>
+                                        <span class="duration">1min</span>
+                                    </div>
+                                    <div class="lecture-item">
+                                        <i class="fas fa-check-circle progress-icon text-success"></i>
+                                        <span class="flex-grow-1">How to Use Google Colab & Machine Learning</span>
+                                        <span class="duration">5min</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Section 2 and 3 remain unchanged -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const video = document.getElementById('myVideo');
+    const playButton = document.getElementById('playButton');
+    const volumeButton = document.getElementById('volumeButton');
+    const timeDisplay = document.getElementById('timeDisplay');
+    const progressBar = document.querySelector('.progress-bar');
+
+    // 播放/暂停控制
+    playButton.addEventListener('click', function() {
+        if (video.paused) {
+            video.play();
+            playButton.querySelector('i').classList.replace('fa-play', 'fa-pause');
+        } else {
+            video.pause();
+            playButton.querySelector('i').classList.replace('fa-pause', 'fa-play');
+        }
+    });
+
+    // 音量控制
+    volumeButton.addEventListener('click', function() {
+        if (video.muted) {
+            video.muted = false;
+            volumeButton.querySelector('i').classList.replace('fa-volume-mute', 'fa-volume-up');
+        } else {
+            video.muted = true;
+            volumeButton.querySelector('i').classList.replace('fa-volume-up', 'fa-volume-mute');
+        }
+    });
+
+    // 更新时间显示和进度条
+    video.addEventListener('timeupdate', function() {
+        const current = video.currentTime;
+        const duration = video.duration;
+        const minutes = Math.floor(current / 60);
+        const seconds = Math.floor(current % 60);
+        const totalMinutes = Math.floor(duration / 60);
+        const totalSeconds = Math.floor(duration % 60);
+        
+        timeDisplay.textContent = `${minutes}:${seconds.toString().padStart(2, '0')} / ${totalMinutes}:${totalSeconds.toString().padStart(2, '0')}`;
+        progressBar.style.width = `${(current / duration) * 100}%`;
+    });
+});
+</script>
+</body>
+</html>
