@@ -133,3 +133,22 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', updateSections);
  });
 
+ function updateLoginButton() {
+    const isLoggedIn = sessionStorage.getItem('isLoggedIn');
+    const loginButton = document.querySelector('.login-button');
+
+    if (isLoggedIn) {
+        loginButton.textContent = 'Logout';
+        loginButton.href = '#';
+        loginButton.onclick = function() {
+            sessionStorage.removeItem('isLoggedIn');
+            window.location.href = 'index.html';
+        };
+    } else {
+        loginButton.textContent = 'Login';
+        loginButton.href = 'login.html';
+    }
+}
+
+// Call updateLoginButton on page load
+window.onload = updateLoginButton;

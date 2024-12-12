@@ -5,7 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GWU Skill Exchange</title>
     <link rel="stylesheet" href="css/login.css">
+    <script>
+        // Fake user data
+        const users = [
+            { email: "2946161393@qq.com", password: "1234" },
+            { email: "princesssarahb@gwu.edu", password: "1234" },
+            { email: "priscillagudisa@gwu.edu", password: "1234" }
+        ];
     
+        function login(event) {
+            event.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            const user = users.find(user => user.email === email && user.password === password);
+
+            if (user) {
+                alert('Login successful!');
+                // Set login status
+                sessionStorage.setItem('isLoggedIn', 'true');
+                // Redirect to another page
+                window.location.href = 'inter.html';
+            } else {
+                alert('Invalid email or password.');
+            }
+        }
+    </script>
 </head>
 <body>
    <!-- Header -->
@@ -45,7 +70,7 @@
 <div class="login-section">
     <div class="login-box">
         <h1 class="login-title">Login</h1>
-        <form>
+        <form onsubmit="login(event)">
             <div class="login-form-group">
                 <label for="email">Email Address</label>
                 <input type="email" id="email" name="email" required>
@@ -55,14 +80,14 @@
                 <label for="password">Password</label>
                 <input type="password" id="password" name="password" required>
             </div>
-
-        <div class="login-options">
-            <div class="remember-me">
-                <input type="checkbox" id="remember" name="remember">
-                <label for="remember">Remember me</label>
+        
+            <div class="login-options">
+                <div class="remember-me">
+                    <input type="checkbox" id="remember" name="remember">
+                    <label for="remember">Remember me</label>
+                </div>
+                <a href="forgot-password.html" class="forgot-password">Forgot password?</a>
             </div>
-            <a href="forgot-password.html" class="forgot-password">Forgot password?</a>
-        </div>
             
             <button type="submit" class="login-submit-btn">Login</button>
         </form>
