@@ -133,6 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', updateSections);
  });
 
+ //login
  function updateLoginButton() {
     const isLoggedIn = sessionStorage.getItem('isLoggedIn');
     const loginButton = document.querySelector('.login-button');
@@ -152,3 +153,145 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Call updateLoginButton on page load
 window.onload = updateLoginButton;
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Add click event listeners to buttons
+    const scheduleButtons = document.querySelectorAll(".schedule-button");
+    const chatButtons = document.querySelectorAll(".chat-button");
+    const bookingModal = new bootstrap.Modal(document.getElementById("bookingModal"));
+    const providerNameField = document.getElementById("providerName");
+
+    scheduleButtons.forEach(button => {
+        button.addEventListener("click", function () {
+            const providerName = button.getAttribute("data-name");
+            providerNameField.textContent = `Booking session with ${providerName}`;
+            bookingModal.show();
+        });
+    });
+
+
+    // Modal confirm button
+    const confirmBookingButton = document.querySelector(".modal-footer .btn-primary");
+    confirmBookingButton.addEventListener("click", function () {
+        const date = document.getElementById("date").value;
+        const time = document.getElementById("time").value;
+        if (date && time) {
+            alert(`Booking confirmed for ${date} at ${time}`);
+            bookingModal.hide();
+        } else {
+            alert("Please select both date and time!");
+        }
+    });
+});
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const skillCheckboxes = document.querySelectorAll(".skill-checkbox");
+    const providerCards = document.querySelectorAll(".col-md-4"); // Select all provider cards
+    const noProvidersMessage = document.getElementById("no-providers-message"); // No providers message element
+
+    // Function to filter providers
+    function filterProviders() {
+        const selectedCategories = Array.from(skillCheckboxes)
+            .filter(checkbox => checkbox.checked)
+            .map(checkbox => checkbox.value);
+
+        let visibleCount = 0; // Track number of visible providers
+
+        if (selectedCategories.length === 0) {
+            // If no checkboxes are selected, show all providers
+            providerCards.forEach(card => {
+                card.style.display = "block";
+                visibleCount++;
+            });
+        } else {
+            // Show only providers matching selected categories
+            providerCards.forEach(card => {
+                const categoryElement = card.querySelector(".card-category");
+                if (categoryElement) {
+                    const providerCategory = categoryElement.textContent.split(":")[1].trim();
+                    if (selectedCategories.includes(providerCategory)) {
+                        card.style.display = "block"; // Show matching provider
+                        visibleCount++;
+                    } else {
+                        card.style.display = "none"; // Hide non-matching provider
+                    }
+                }
+            });
+        }
+
+        // Show or hide the "No Providers" message
+        if (visibleCount === 0) {
+            noProvidersMessage.style.display = "block";
+        } else {
+            noProvidersMessage.style.display = "none";
+        }
+    }
+
+    // Add event listeners to all checkboxes
+    skillCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener("change", filterProviders);
+    });
+
+    // Initial state: Show all providers
+    filterProviders();
+});
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const chatButtons = document.querySelectorAll(".chat-button");
+    const chatModal = new bootstrap.Modal(document.getElementById("chatModal"));
+    const providerChatName = document.getElementById("providerChatName");
+    const chatMessages = document.getElementById("chatMessages");
+    const chatInput = document.getElementById("chatInput");
+    const sendChatButton = document.getElementById("sendChatButton");
+
+    let currentProvider = ""; // Keep track of the current provider
+
+    // Event listener for chat buttons
+    chatButtons.forEach(button => {
+        button.addEventListener("click", function () {
+            currentProvider = button.getAttribute("data-name"); // Get provider name
+            providerChatName.textContent = currentProvider; // Update modal title
+            chatMessages.innerHTML = ""; // Clear previous chat messages
+            chatModal.show();
+        });
+    });
+
+    // Send message functionality
+    sendChatButton.addEventListener("click", function () {
+        const message = chatInput.value.trim();
+        if (message) {
+            // Display the message in the chat log
+            const userMessage = document.createElement("div");
+            userMessage.textContent = `You: ${message}`;
+            userMessage.style.marginBottom = "5px";
+            chatMessages.appendChild(userMessage);
+
+            // Simulate provider response
+            setTimeout(() => {
+                const providerMessage = document.createElement("div");
+                providerMessage.textContent = `${currentProvider}: Thank you for reaching out!`;
+                providerMessage.style.marginBottom = "5px";
+                providerMessage.style.color = "blue";
+                chatMessages.appendChild(providerMessage);
+
+                // Scroll to the latest message
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }, 1000);
+
+            chatInput.value = ""; // Clear input field
+        }
+    });
+
+    // Allow sending messages by pressing Enter
+    chatInput.addEventListener("keypress", function (event) {
+        if (event.key === "Enter") {
+            sendChatButton.click();
+        }
+    });
+});
